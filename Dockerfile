@@ -5,7 +5,7 @@ COPY clinic-frontend/package*.json ./
 RUN npm install -g @angular/cli@19.2.15
 RUN npm install --ignore-scripts
 COPY clinic-frontend/ ./
-RUN npm run build --configuration production
+RUN npm run build -- --configuration production
 
 # Stage 2: Serve Angular app with Nginx
 FROM nginx:alpine
